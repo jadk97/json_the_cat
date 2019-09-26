@@ -1,5 +1,4 @@
 const request = require("request");
-const args = process.argv.slice(2);
 
 
 const fetchBreedDescription = function (breedName, callback) {
@@ -8,7 +7,7 @@ const fetchBreedDescription = function (breedName, callback) {
     if (data.length === 0) {
       callback("Breed not found.");
     } else {
-      callback(data[0].description);
+      callback(error, data[0].description);
     }
   });
 }
