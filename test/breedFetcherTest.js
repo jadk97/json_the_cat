@@ -15,4 +15,17 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
+  it('returns an error if an invalid or non-existent breed is passed in', (done) => {
+    fetchBreedDescription('Doberman', (err, desc) => {
+      // we expect no error for this scenario
+      assert.equal(err, "Breed not found.");
+
+      
+
+      // compare returned description
+      assert.equal(desc, null);
+
+      done();
+    });
+  });
 });
